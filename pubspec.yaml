@@ -30,7 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get: ^4.6.1
+  get: ^4.6.6
   # DateTime
   jiffy: ^6.2.1
   intl: ^0.18.1
@@ -115,9 +115,11 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Gt Sectra Fine
+    - family: Cairo
       fonts:
-        - asset: assets/fonts/GT Sectra Fine Regular.ttf
+        - asset: assets/fonts/Cairo/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo/Cairo-Bold.ttf
+          weight: 700
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
