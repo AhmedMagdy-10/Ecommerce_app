@@ -41,6 +41,7 @@ dependencies:
   # Animate
   show_up_animation: ^2.0.0
   auto_animated: ^3.0.1
+  smooth_page_indicator: ^1.1.0
   # Google Map
   flutter_polyline_points: ^2.0.0
   google_maps_flutter: ^2.5.0
