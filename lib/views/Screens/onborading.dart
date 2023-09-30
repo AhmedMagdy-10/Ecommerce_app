@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/controller/onboradingcontroller.dart';
 import 'package:ecommerce_app/core/constant/colors.dart';
-import 'package:ecommerce_app/views/Screens/login_screen.dart';
+import 'package:ecommerce_app/core/constant/routes_name.dart';
 
 import 'package:ecommerce_app/views/widgets/OnBorading/custombutton.dart';
 import 'package:ecommerce_app/views/widgets/OnBorading/customonboradingitem.dart';
@@ -42,7 +42,7 @@ class OnBorading extends StatelessWidget {
                         color: kprimaryColor,
                         onTap: () {
                           if (controller.isLast) {
-                            Get.offAll(() => const LoginScreen());
+                            Get.offAllNamed(AppRoute.login);
                           }
 
                           onboradController.nextPage(

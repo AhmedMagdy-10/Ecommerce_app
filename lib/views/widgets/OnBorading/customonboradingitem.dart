@@ -10,6 +10,7 @@ class CustomOnboradItem extends GetView<OnboradingController> {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
+      physics: const BouncingScrollPhysics(),
       controller: onboradController,
       itemCount: onBoradingList.length,
       onPageChanged: (index) {
@@ -18,14 +19,8 @@ class CustomOnboradItem extends GetView<OnboradingController> {
       itemBuilder: (context, index) {
         return Column(
           children: [
-            Text(
-              onBoradingList[index].title,
-              style: const TextStyle(
-                fontFamily: 'Cairo',
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
-              ),
-            ),
+            Text(onBoradingList[index].title,
+                style: Theme.of(context).textTheme.titleLarge),
             const SizedBox(
               height: 60,
             ),
@@ -46,11 +41,7 @@ class CustomOnboradItem extends GetView<OnboradingController> {
               child: Text(
                 onBoradingList[index].body,
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    height: 1.5,
-                    fontSize: 17,
-                    color: Colors.grey[700]),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
             const SizedBox(
