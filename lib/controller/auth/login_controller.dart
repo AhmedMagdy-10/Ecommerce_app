@@ -7,4 +7,8 @@ class LoginController extends GetxController {
   goToSignUp() {
     Get.toNamed(AppRoute.signUp);
   }
+
+  goToForgetPassword() {
+    Get.toNamed(AppRoute.forgetPassword);
+  }
 }
