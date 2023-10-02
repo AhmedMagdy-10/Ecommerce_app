@@ -6,6 +6,7 @@ import 'package:ecommerce_app/views/widgets/auth/custom_body_content.dart';
 import 'package:ecommerce_app/views/widgets/auth/custom_logo_auth.dart';
 import 'package:ecommerce_app/views/widgets/auth/custom_title_content_auth.dart';
 import 'package:ecommerce_app/views/widgets/auth/sign_in_or_up.dart';
+import 'package:ecommerce_app/views/widgets/custom_app_bar.dart';
 import 'package:ecommerce_app/views/widgets/custom_text_form_feild.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,17 +22,7 @@ class LoginScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-        title: Text(
-          'Sign In',
-          style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                color: Colors.grey,
-              ),
-        ),
-      ),
+      appBar: const CustomAppBar(title: 'Sign In'),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsetsDirectional.symmetric(
@@ -103,7 +94,7 @@ class LoginScreen extends StatelessWidget {
                 height: 20,
               ),
               const CustomButtonOnBorading(
-                text: 'Continue',
+                text: 'Sign In',
                 color: kprimaryColor,
               ),
               const SizedBox(

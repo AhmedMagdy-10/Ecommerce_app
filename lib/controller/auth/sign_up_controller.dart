@@ -7,4 +7,8 @@ class SignUpController extends GetxController {
   goToSignIn() {
     Get.offNamed(AppRoute.login);
   }
+
+  goToCheckEmail() {
+    Get.offNamed(AppRoute.checkEmail);
+  }
 }
