@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const CustomAppBar(title: 'Sign In'),
+      appBar: CustomAppBar(title: '9'.tr),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsetsDirectional.symmetric(
@@ -33,18 +33,16 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              const CustomTitleContentAuth(title: 'Welcome Back'),
+              CustomTitleContentAuth(title: '10'.tr),
               const SizedBox(
                 height: 15,
               ),
-              const CustomBodyContentAuth(
-                  text:
-                      'Sign In With Your Email And Password Or Continue With Social Medial'),
+              CustomBodyContentAuth(text: '11'.tr),
               const SizedBox(
                 height: 20,
               ),
               CustomTextFormField(
-                hintText: 'Enter Your Email',
+                hintText: '12'.tr,
                 controller: emailController,
                 validator: (data) {
                   if (data!.isEmpty) {
@@ -53,14 +51,14 @@ class LoginScreen extends StatelessWidget {
                     return '';
                   }
                 },
-                label: const Text('Email'),
+                label: Text('18'.tr),
                 suffixIcon: const Icon(
                   Icons.email_outlined,
                 ),
               ),
               const SizedBox(height: 20),
               CustomTextFormField(
-                hintText: 'Enter Your Password',
+                hintText: '13'.tr,
                 controller: passwordController,
                 validator: (data) {
                   if (data!.isEmpty) {
@@ -69,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                     return '';
                   }
                 },
-                label: const Text('Password'),
+                label: Text('19'.tr),
                 suffixIcon: const Icon(
                   Icons.lock,
                 ),
@@ -84,8 +82,8 @@ class LoginScreen extends StatelessWidget {
                     onTap: () {
                       controller.goToForgetPassword();
                     },
-                    child: const Text(
-                      'forget Password',
+                    child: Text(
+                      '14'.tr,
                     ),
                   ),
                 ],
@@ -93,19 +91,19 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const CustomButtonOnBorading(
-                text: 'Sign In',
+              CustomButtonOnBorading(
+                text: '15'.tr,
                 color: kprimaryColor,
               ),
               const SizedBox(
                 height: 10,
               ),
               SignInOrUp(
-                text: "Don't have an account ? ",
+                text: "16".tr,
                 onTap: () {
                   controller.goToSignUp();
                 },
-                buttonText: "SignUp",
+                buttonText: "17".tr,
               )
             ],
           ),

@@ -1,28 +1,25 @@
 import 'package:ecommerce_app/data/models/onborading_model.dart';
+import 'package:get/get.dart';
 
 List<OnBoradingModel> onBoradingList = [
   OnBoradingModel(
-    title: 'Choose Product',
+    title: '2'.tr,
     image: 'assets/image/onBorading1.png',
-    body:
-        'We Have a 100K+ Products,Choose \n Your Product from our \n E-commerce shop',
+    body: '3'.tr,
   ),
   OnBoradingModel(
-    title: 'Easy & Safe Payment',
+    title: '4'.tr,
     image: 'assets/image/onBorading2.png',
-    body:
-        'Easy Checkout & Safe Payment \n method.Trusted by our Customers\n from all over the world',
+    body: '5'.tr,
   ),
   OnBoradingModel(
-    title: 'Track Your Order',
+    title: '6'.tr,
     image: 'assets/image/onBorading4.png',
-    body:
-        'Best Tracker has been Used For\n Track your order. You\'ll know where \n your product is at the moment',
+    body: '7'.tr,
   ),
   OnBoradingModel(
-    title: 'Fast Delivery',
+    title: 'f'.tr,
     image: 'assets/image/onBorading3.png',
-    body:
-        'Reliable And Fast Delivery. We\n Deliver your product the fastest\n way possible',
+    body: 'r'.tr,
   ),
 ];

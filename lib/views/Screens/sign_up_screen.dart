@@ -23,24 +23,22 @@ class RegisterScreen extends StatelessWidget {
     final TextEditingController userNameController = TextEditingController();
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const CustomAppBar(title: 'Sign Up'),
+      appBar: CustomAppBar(title: '17'.tr),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsetsDirectional.symmetric(
               vertical: 20, horizontal: 30),
           child: Column(children: [
-            const CustomTitleContentAuth(title: 'Welcome Back'),
+            CustomTitleContentAuth(title: '10'.tr),
             const SizedBox(
               height: 15,
             ),
-            const CustomBodyContentAuth(
-                text:
-                    'Sign In With Your Email And Password Or Continue With Social Medial'),
+            CustomBodyContentAuth(text: '24'.tr),
             const SizedBox(
               height: 60,
             ),
             CustomTextFormField(
-              hintText: 'Enter Your UserName',
+              hintText: '23'.tr,
               controller: userNameController,
               validator: (data) {
                 if (data!.isEmpty) {
@@ -56,7 +54,7 @@ class RegisterScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             CustomTextFormField(
-              hintText: 'Enter Your Email',
+              hintText: '12'.tr,
               controller: emailController,
               validator: (data) {
                 if (data!.isEmpty) {
@@ -65,14 +63,14 @@ class RegisterScreen extends StatelessWidget {
                   return '';
                 }
               },
-              label: const Text('Email'),
+              label: Text('18'.tr),
               suffixIcon: const Icon(
                 Icons.email_outlined,
               ),
             ),
             const SizedBox(height: 20),
             CustomTextFormField(
-              hintText: 'Enter Your Phone',
+              hintText: '22'.tr,
               controller: phoneController,
               validator: (data) {
                 if (data!.isEmpty) {
@@ -81,7 +79,7 @@ class RegisterScreen extends StatelessWidget {
                   return '';
                 }
               },
-              label: const Text('Phone'),
+              label: Text('21'.tr),
               suffixIcon: const Icon(
                 Icons.phone,
               ),
@@ -97,27 +95,16 @@ class RegisterScreen extends StatelessWidget {
                   return '';
                 }
               },
-              label: const Text('Password'),
+              label: Text('19'.tr),
               suffixIcon: const Icon(
                 Icons.lock,
               ),
             ),
             const SizedBox(
-              height: 10,
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  'forget Password',
-                ),
-              ],
-            ),
-            const SizedBox(
               height: 20,
             ),
             CustomButtonOnBorading(
-              text: 'Sign Up',
+              text: '17'.tr,
               onTap: () {
                 controller.goToCheckEmail();
               },
@@ -127,11 +114,11 @@ class RegisterScreen extends StatelessWidget {
               height: 10,
             ),
             SignInOrUp(
-                text: " have an account ? ",
+                text: "25".tr,
                 onTap: () {
                   controller.goToSignIn();
                 },
-                buttonText: 'SignIn'),
+                buttonText: '15'.tr),
           ]),
         ),
       ),

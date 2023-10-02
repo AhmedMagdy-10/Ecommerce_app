@@ -19,8 +19,13 @@ class CustomOnboradItem extends GetView<OnboradingController> {
       itemBuilder: (context, index) {
         return Column(
           children: [
-            Text(onBoradingList[index].title,
-                style: Theme.of(context).textTheme.titleLarge),
+            Text(
+              onBoradingList[index].title,
+              style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 20,
+              ),
+            ),
             const SizedBox(
               height: 60,
             ),
@@ -41,7 +46,12 @@ class CustomOnboradItem extends GetView<OnboradingController> {
               child: Text(
                 onBoradingList[index].body,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  height: 1.5,
+                  fontSize: 17,
+                  color: Colors.grey[700],
+                ),
               ),
             ),
             const SizedBox(

@@ -5,6 +5,7 @@ import 'package:ecommerce_app/views/widgets/auth/custom_title_content_auth.dart'
 import 'package:ecommerce_app/views/widgets/custom_app_bar.dart';
 import 'package:ecommerce_app/views/widgets/custom_text_form_feild.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CheckEmail extends StatelessWidget {
   const CheckEmail({super.key});
@@ -14,7 +15,7 @@ class CheckEmail extends StatelessWidget {
     final TextEditingController emailController = TextEditingController();
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const CustomAppBar(title: 'Check Email'),
+      appBar: CustomAppBar(title: '27'.tr),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsetsDirectional.symmetric(
@@ -24,20 +25,18 @@ class CheckEmail extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              const CustomTitleContentAuth(
-                title: 'Success Sign Up',
+              CustomTitleContentAuth(
+                title: '28'.tr,
               ),
               const SizedBox(
                 height: 15,
               ),
-              const CustomBodyContentAuth(
-                  text:
-                      'You Need to Verification Your Email to Include Your data '),
+              CustomBodyContentAuth(text: '29'.tr),
               const SizedBox(
                 height: 20,
               ),
               CustomTextFormField(
-                hintText: 'Enter Your Email',
+                hintText: '12'.tr,
                 controller: emailController,
                 validator: (data) {
                   if (data!.isEmpty) {
@@ -46,14 +45,14 @@ class CheckEmail extends StatelessWidget {
                     return '';
                   }
                 },
-                label: const Text('Email'),
+                label: Text('18'.tr),
                 suffixIcon: const Icon(
                   Icons.email_outlined,
                 ),
               ),
               const SizedBox(height: 20),
               CustomButtonOnBorading(
-                text: 'Check',
+                text: '30'.tr,
                 color: kprimaryColor,
                 onTap: () {
                   // controller.goToVerifyCode();

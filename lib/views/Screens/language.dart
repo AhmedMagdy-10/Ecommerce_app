@@ -26,7 +26,7 @@ class LanguageScreen extends GetView<LocaleContrroller> {
                 controller.chaneLang('ar');
                 Get.toNamed(AppRoute.onBorading);
               },
-              text: '2'.tr,
+              text: 'ar'.tr,
             ),
             const SizedBox(
               height: 10,
@@ -36,7 +36,7 @@ class LanguageScreen extends GetView<LocaleContrroller> {
                 controller.chaneLang('en');
                 Get.toNamed(AppRoute.onBorading);
               },
-              text: "3".tr,
+              text: "en".tr,
             ),
           ],
         ),

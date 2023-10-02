@@ -38,7 +38,7 @@ class OnBorading extends StatelessWidget {
                   GetBuilder<OnboradingController>(
                     builder: (controller) {
                       return CustomButtonOnBorading(
-                        text: "Continue",
+                        text: "8".tr,
                         color: kprimaryColor,
                         onTap: () {
                           if (controller.isLast) {
