@@ -15,7 +15,7 @@ class CustomTextFormField extends StatelessWidget {
       this.onPressed});
   final TextEditingController controller;
   final void Function(String)? onSubmitted;
-  final String Function(String?) validator;
+  final String? Function(String?)? validator;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final Widget label;

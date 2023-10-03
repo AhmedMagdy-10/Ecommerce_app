@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CustomButtonOnBorading extends StatelessWidget {
   const CustomButtonOnBorading(
       {super.key, required this.text, required this.color, this.onTap});
-  final VoidCallback? onTap;
+  final void Function()? onTap;
   final Color? color;
   final String? text;
   @override
