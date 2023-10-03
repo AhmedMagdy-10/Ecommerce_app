@@ -11,10 +11,12 @@ Widget reusedTextField({
   Function(String)? onSubmitted,
   String? Function(String?)? validator,
   String? hintText,
+  TextInputType? keyboardType,
 }) =>
     TextFormField(
         controller: controller,
         onFieldSubmitted: onSubmitted,
+        keyboardType: keyboardType,
         validator: validator,
         obscureText: secure,
         onChanged: onChanged,
