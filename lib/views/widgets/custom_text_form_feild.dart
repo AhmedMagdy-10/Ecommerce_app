@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/core/constant/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -12,7 +11,7 @@ class CustomTextFormField extends StatelessWidget {
       this.hintText,
       required this.label,
       this.secure = false,
-      this.onPressed,
+      this.onPressedSuffixIcon,
       this.keyboardType});
   final TextEditingController controller;
   final void Function(String)? onSubmitted;
@@ -20,10 +19,11 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final Widget label;
+
   final bool secure;
   final String? hintText;
   final TextInputType? keyboardType;
-  final void Function()? onPressed;
+  final void Function()? onPressedSuffixIcon;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -43,16 +43,11 @@ class CustomTextFormField extends StatelessWidget {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(32),
           ),
-          label: Container(
-            margin: const EdgeInsets.symmetric(
-              horizontal: 10,
-            ),
-            child: label,
-          ),
+          label: label,
           suffixIcon: IconButton(
-            onPressed: onPressed,
+            onPressed: onPressedSuffixIcon,
             icon: suffixIcon!,
-            color: kprimaryColor,
+            padding: EdgeInsets.zero,
           ),
           prefixIcon: prefixIcon,
         ));

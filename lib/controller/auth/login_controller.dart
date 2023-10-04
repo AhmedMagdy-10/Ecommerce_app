@@ -22,4 +22,11 @@ class LoginController extends GetxController {
   goToForgetPassword() {
     Get.toNamed(AppRoute.forgetPassword);
   }
+
+  bool isPassword = true;
+
+  showPassword() {
+    isPassword = !isPassword;
+    update();
+  }
 }

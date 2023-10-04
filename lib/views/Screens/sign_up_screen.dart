@@ -82,16 +82,20 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 CustomTextFormField(
-                  hintText: 'Enter Y our Password',
-                  controller: passwordController,
-                  validator: (value) {
-                    return validatorInput(value!, "password", 5, 20);
-                  },
-                  label: Text('19'.tr),
-                  suffixIcon: const Icon(
-                    Icons.lock,
-                  ),
-                ),
+                    hintText: 'Enter Your Password',
+                    secure: true,
+                    controller: passwordController,
+                    validator: (value) {
+                      return validatorInput(value!, "password", 5, 20);
+                    },
+                    label: Text('19'.tr),
+                    suffixIcon: IconButton(
+                      padding: EdgeInsets.zero,
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.lock_outline,
+                      ),
+                    )),
                 const SizedBox(
                   height: 20,
                 ),

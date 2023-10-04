@@ -4,7 +4,7 @@ Widget reusedTextField({
   Widget? label,
   required TextEditingController? controller,
   bool secure = false,
-  IconData? suffixIcon,
+  required Widget suffixIcon,
   Widget? prefix,
   Function(String)? onChanged,
   Function()? suffixPressed,
@@ -23,7 +23,7 @@ Widget reusedTextField({
         decoration: InputDecoration(
           hintText: hintText,
           suffixIcon: IconButton(
-            icon: Icon(suffixIcon),
+            icon: suffixIcon,
             onPressed: suffixPressed,
           ),
           label: label,

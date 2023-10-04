@@ -6,9 +6,10 @@ import 'package:ecommerce_app/views/widgets/OnBorading/custombutton.dart';
 import 'package:ecommerce_app/views/widgets/auth/custom_body_content.dart';
 import 'package:ecommerce_app/views/widgets/auth/custom_logo_auth.dart';
 import 'package:ecommerce_app/views/widgets/auth/custom_title_content_auth.dart';
-import 'package:ecommerce_app/views/widgets/auth/reused_form_field.dart';
+
 import 'package:ecommerce_app/views/widgets/auth/sign_in_or_up.dart';
 import 'package:ecommerce_app/views/widgets/custom_app_bar.dart';
+import 'package:ecommerce_app/views/widgets/custom_text_form_feild.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -45,25 +46,40 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  reusedTextField(
+                  CustomTextFormField(
                     keyboardType: TextInputType.emailAddress,
+                    hintText: '12'.tr,
                     controller: emailController,
                     validator: (value) {
-                      return validatorInput(value!, "email", 5, 100);
+                      return validatorInput(value!, "email", 5, 50);
                     },
-                    hintText: '12'.tr,
                     label: Text('18'.tr),
-                    suffixIcon: Icons.email_outlined,
+                    suffixIcon: const Icon(
+                      Icons.email_outlined,
+                    ),
                   ),
                   const SizedBox(height: 20),
-                  reusedTextField(
-                    controller: passwordController,
-                    hintText: '13'.tr,
-                    label: Text('19'.tr),
-                    validator: (value) {
-                      return validatorInput(value!, "password", 5, 50);
+                  GetBuilder<LoginController>(
+                    builder: (controller) {
+                      return CustomTextFormField(
+                          hintText: 'Enter Your Password',
+                          secure: controller.isPassword,
+                          controller: passwordController,
+                          validator: (value) {
+                            return validatorInput(value!, "password", 5, 20);
+                          },
+                          label: Text('19'.tr),
+                          onPressedSuffixIcon: () {
+                            controller.showPassword();
+                          },
+                          suffixIcon: controller.isPassword
+                              ? const Icon(
+                                  Icons.lock_outline,
+                                )
+                              : const Icon(
+                                  Icons.lock_open,
+                                ));
                     },
-                    suffixIcon: Icons.lock,
                   ),
                   const SizedBox(
                     height: 10,
