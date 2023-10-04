@@ -1,5 +1,7 @@
 import 'package:ecommerce_app/controller/auth/sign_up_controller.dart';
 import 'package:ecommerce_app/core/constant/colors.dart';
+import 'package:ecommerce_app/core/functions/alert_exit_app.dart';
+import 'package:ecommerce_app/core/functions/validator.dart';
 
 import 'package:ecommerce_app/views/widgets/OnBorading/custombutton.dart';
 import 'package:ecommerce_app/views/widgets/auth/custom_body_content.dart';
@@ -24,102 +26,94 @@ class RegisterScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: CustomAppBar(title: '17'.tr),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsetsDirectional.symmetric(
-              vertical: 20, horizontal: 30),
-          child: Column(children: [
-            CustomTitleContentAuth(title: '10'.tr),
-            const SizedBox(
-              height: 15,
+      body: WillPopScope(
+        onWillPop: alertExitApp,
+        child: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsetsDirectional.symmetric(
+                vertical: 20, horizontal: 30),
+            child: Form(
+              key: controller.formKey,
+              child: Column(children: [
+                CustomTitleContentAuth(title: '10'.tr),
+                const SizedBox(
+                  height: 15,
+                ),
+                CustomBodyContentAuth(text: '24'.tr),
+                const SizedBox(
+                  height: 60,
+                ),
+                CustomTextFormField(
+                  hintText: '23'.tr,
+                  controller: userNameController,
+                  validator: (value) {
+                    return validatorInput(value!, "username", 5, 50);
+                  },
+                  label: const Text('UserName'),
+                  suffixIcon: const Icon(
+                    Icons.person,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                CustomTextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  hintText: '12'.tr,
+                  controller: emailController,
+                  validator: (value) {
+                    return validatorInput(value!, "email", 5, 50);
+                  },
+                  label: Text('18'.tr),
+                  suffixIcon: const Icon(
+                    Icons.email_outlined,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                CustomTextFormField(
+                  keyboardType: TextInputType.phone,
+                  hintText: '22'.tr,
+                  controller: phoneController,
+                  validator: (value) {
+                    return validatorInput(value!, "phone", 5, 20);
+                  },
+                  label: Text('21'.tr),
+                  suffixIcon: const Icon(
+                    Icons.phone,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                CustomTextFormField(
+                  hintText: 'Enter Y our Password',
+                  controller: passwordController,
+                  validator: (value) {
+                    return validatorInput(value!, "password", 5, 20);
+                  },
+                  label: Text('19'.tr),
+                  suffixIcon: const Icon(
+                    Icons.lock,
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                CustomButtonOnBorading(
+                  text: '17'.tr,
+                  onTap: () {
+                    controller.signUp();
+                  },
+                  color: kprimaryColor,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                SignInOrUp(
+                    text: "25".tr,
+                    onTap: () {
+                      controller.goToSignIn();
+                    },
+                    buttonText: '15'.tr),
+              ]),
             ),
-            CustomBodyContentAuth(text: '24'.tr),
-            const SizedBox(
-              height: 60,
-            ),
-            CustomTextFormField(
-              hintText: '23'.tr,
-              controller: userNameController,
-              validator: (data) {
-                if (data!.isEmpty) {
-                  return 'UserName is required';
-                } else {
-                  return '';
-                }
-              },
-              label: const Text('UserName'),
-              suffixIcon: const Icon(
-                Icons.person,
-              ),
-            ),
-            const SizedBox(height: 20),
-            CustomTextFormField(
-              hintText: '12'.tr,
-              controller: emailController,
-              validator: (data) {
-                if (data!.isEmpty) {
-                  return 'Email is required';
-                } else {
-                  return '';
-                }
-              },
-              label: Text('18'.tr),
-              suffixIcon: const Icon(
-                Icons.email_outlined,
-              ),
-            ),
-            const SizedBox(height: 20),
-            CustomTextFormField(
-              hintText: '22'.tr,
-              controller: phoneController,
-              validator: (data) {
-                if (data!.isEmpty) {
-                  return 'Phone is required';
-                } else {
-                  return '';
-                }
-              },
-              label: Text('21'.tr),
-              suffixIcon: const Icon(
-                Icons.phone,
-              ),
-            ),
-            const SizedBox(height: 20),
-            CustomTextFormField(
-              hintText: 'Enter Your Password',
-              controller: passwordController,
-              validator: (data) {
-                if (data!.isEmpty) {
-                  return 'Password is required';
-                } else {
-                  return '';
-                }
-              },
-              label: Text('19'.tr),
-              suffixIcon: const Icon(
-                Icons.lock,
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            CustomButtonOnBorading(
-              text: '17'.tr,
-              onTap: () {
-                controller.goToCheckEmail();
-              },
-              color: kprimaryColor,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            SignInOrUp(
-                text: "25".tr,
-                onTap: () {
-                  controller.goToSignIn();
-                },
-                buttonText: '15'.tr),
-          ]),
+          ),
         ),
       ),
     );

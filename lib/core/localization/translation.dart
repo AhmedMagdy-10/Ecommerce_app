@@ -52,8 +52,8 @@ class MyTranslation extends Translations {
         },
         "en": {
           "1": "Choose Language",
-          "ar": "العربيه",
-          'en': 'الانجليزيه',
+          "ar": "Arabic",
+          'en': 'English',
           "2": "Choose Product",
           "3":
               "We Have a 100k Product , Choose \n Your Product From  Our \n E-commerce Shop",

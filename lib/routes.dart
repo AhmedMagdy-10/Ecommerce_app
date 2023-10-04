@@ -5,6 +5,7 @@ import 'package:ecommerce_app/views/Screens/login_screen.dart';
 import 'package:ecommerce_app/views/Screens/onborading.dart';
 import 'package:ecommerce_app/views/Screens/reset_password_screen.dart';
 import 'package:ecommerce_app/views/Screens/sign_up_screen.dart';
+import 'package:ecommerce_app/views/Screens/verify_code_sign_up.dart';
 import 'package:ecommerce_app/views/Screens/verify_screen.dart';
 
 import 'package:flutter/widgets.dart';
@@ -15,6 +16,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   AppRoute.signUp: (context) => const RegisterScreen(),
   AppRoute.forgetPassword: (context) => const ForgetPassword(),
   AppRoute.verifyCode: (context) => const VerifyCode(),
+  AppRoute.verifyCodeSignUp: (context) => const VerifyCodeSignUp(),
   AppRoute.checkEmail: (context) => const CheckEmail(),
   AppRoute.resetPassword: (context) => const ResetPassword(),
 };

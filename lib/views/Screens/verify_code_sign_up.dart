@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/controller/auth/verify_code_controller.dart';
+import 'package:ecommerce_app/controller/auth/verify_code_sign_up_contoller.dart';
 import 'package:ecommerce_app/views/widgets/auth/custom_body_content.dart';
 
 import 'package:ecommerce_app/views/widgets/auth/custom_title_content_auth.dart';
@@ -14,7 +14,8 @@ class VerifyCodeSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VerifyCodeController controller = Get.put(VerifyCodeController());
+    VerifyCodeSignUpController controller =
+        Get.put(VerifyCodeSignUpController());
     // final TextEditingController emailController = TextEditingController();
 
     return Scaffold(
@@ -49,7 +50,7 @@ class VerifyCodeSignUp extends StatelessWidget {
                 textFieldAlignment: MainAxisAlignment.spaceAround,
                 fieldStyle: FieldStyle.box,
                 onCompleted: (pin) {
-                  controller.goToResetPassword();
+                  controller.goToSignIn();
                 },
               ),
             ],
