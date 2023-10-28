@@ -44,7 +44,6 @@ class OnBorading extends StatelessWidget {
                           if (controller.isLast) {
                             Get.offAllNamed(AppRoute.login);
                           }
-
                           onboradController.nextPage(
                               duration: const Duration(milliseconds: 750),
                               curve: Curves.fastLinearToSlowEaseIn);

@@ -2,7 +2,6 @@ import 'package:ecommerce_app/core/localization/change_lang.dart';
 import 'package:ecommerce_app/core/localization/translation.dart';
 import 'package:ecommerce_app/core/services/services.dart';
 import 'package:ecommerce_app/routes.dart';
-import 'package:ecommerce_app/views/Screens/language.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,8 +26,7 @@ class MyApp extends StatelessWidget {
       locale: contrroller.language,
       theme: contrroller.appTheme,
       debugShowCheckedModeBanner: false,
-      home: const LanguageScreen(),
-      routes: routes,
+      getPages: routes,
     );
   }
 }
