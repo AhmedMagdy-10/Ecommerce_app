@@ -104,7 +104,7 @@ class LoginScreen extends StatelessWidget {
                     text: '15'.tr,
                     color: kprimaryColor,
                     onTap: () {
-                      controller.login();
+                      controller.goToHomeScreen();
                     },
                   ),
                   const SizedBox(

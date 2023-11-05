@@ -2,6 +2,7 @@ import 'package:ecommerce_app/core/constant/routes_name.dart';
 import 'package:ecommerce_app/core/middleware/mymiddleware.dart';
 import 'package:ecommerce_app/views/Screens/check_email.dart';
 import 'package:ecommerce_app/views/Screens/forgetpassword_screen.dart';
+import 'package:ecommerce_app/views/Screens/home_page.dart';
 import 'package:ecommerce_app/views/Screens/language.dart';
 import 'package:ecommerce_app/views/Screens/login_screen.dart';
 import 'package:ecommerce_app/views/Screens/onborading.dart';
@@ -13,19 +14,16 @@ import 'package:ecommerce_app/views/Screens/verify_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 List<GetPage<dynamic>>? routes = [
+  GetPage(name: "/", page: () => const LanguageScreen(), middlewares: [
+    Mymiddleware(),
+  ]),
   GetPage(
-    name: "/",
-    page: () => const LanguageScreen(),
-      middlewares: [
-        Mymiddleware(),
-      ]
+    name: AppRoute.onBorading,
+    page: () => const OnBorading(),
   ),
-  GetPage(
-      name: AppRoute.onBorading,
-      page: () => const OnBorading(),
-    ),
   GetPage(name: AppRoute.login, page: () => const LoginScreen()),
   GetPage(name: AppRoute.signUp, page: () => const RegisterScreen()),
+  GetPage(name: AppRoute.homeScreen, page: () => const HomeScreen()),
   GetPage(name: AppRoute.forgetPassword, page: () => const ForgetPassword()),
   GetPage(name: AppRoute.verifyCode, page: () => const VerifyCode()),
   GetPage(name: AppRoute.checkEmail, page: () => const CheckEmail()),
